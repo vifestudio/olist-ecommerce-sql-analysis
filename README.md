@@ -225,6 +225,7 @@ Average delivery days by state and how proximity between seller and buyer impact
 - **SQLite** | database engine
 - **Python + pandas** | CSV ingestion
 - **VS Code** | SQL editor (SQLite extension)
+
 - **Power BI** | dashboard 
 
 
