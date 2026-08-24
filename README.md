@@ -22,7 +22,7 @@ Source: [Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/da
 | products     | 32,951   |
 | sellers      | 3,095    |
 
-![Row Counts](screenshots/row_count.png)
+![Row Counts](Screenshots/row_count.png)
 
 ---
 
@@ -109,7 +109,7 @@ olist-ecommerce-sql-analysis/
 │   └── ETL.sql            # Full pipeline: exploration, cleaning, analysis
 ├── schema/
 │   └── ERD.md             # Entity relationship diagram
-├── screenshots/           # Query results
+├── Screenshots/           # Query results
 ├── setup_db.py            # Loads CSVs into SQLite (olist.db)
 └── README.md
 ```
@@ -143,13 +143,13 @@ python setup_db.py
 
 PRAGMA queries confirm column names, data types, and structure across all 7 tables.
 
-![PRAGMA customers](screenshots/PRAGMA_customers.jpeg)
-![PRAGMA orders](screenshots/PRAGMA_orders.jpeg)
-![PRAGMA order_items](screenshots/PRAGMA_order%20Item.jpeg)
-![PRAGMA payments](screenshots/PRAGMA_payments.jpeg)
-![PRAGMA reviews](screenshots/PRAGMA_reviews.jpeg)
-![PRAGMA products](screenshots/PRAGMA_products.jpeg)
-![PRAGMA sellers](screenshots/PRAGMA_sellers.jpeg)
+![PRAGMA customers](Screenshots/PRAGMA_customers.jpeg)
+![PRAGMA orders](Screenshots/PRAGMA_orders.jpeg)
+![PRAGMA order_items](Screenshots/PRAGMA_order%20Item.jpeg)
+![PRAGMA payments](Screenshots/PRAGMA_payments.jpeg)
+![PRAGMA reviews](Screenshots/PRAGMA_reviews.jpeg)
+![PRAGMA products](Screenshots/PRAGMA_products.jpeg)
+![PRAGMA sellers](Screenshots/PRAGMA_sellers.jpeg)
 
 ### Key Quality Findings
 
@@ -178,46 +178,46 @@ Two views created to address quality issues:
 ### Q1: Monthly Revenue Trend
 How has revenue evolved month over month?
 
-![Monthly Revenue Trend](screenshots/monthly%20revenue%20trend.jpeg)
+![Monthly Revenue Trend](Screenshots/monthly%20revenue%20trend.jpeg)
 
 ---
 
 ### Q2: Revenue by State
 Which Brazilian states generate the most revenue?
 
-![Revenue by State](screenshots/revenue%20by%20state.jpeg)
+![Revenue by State](Screenshots/revenue%20by%20state.jpeg)
 
 ---
 
 ### Q3: Top Categories by Revenue
 Which product categories drive the most sales?
 
-![Top Categories](screenshots/top%20categories.jpeg)
+![Top Categories](Screenshots/top%20categories.jpeg)
 
 ---
 
 ### Q4: Top Sellers by Revenue
 Who are the top 10 performing sellers?
 
-![Top Sellers](screenshots/top%20sellers.jpeg)
+![Top Sellers](Screenshots/top%20sellers.jpeg)
 
 ---
 
 ### Q5: Customer Satisfaction by Category
 Which categories have the best and worst ratings?
 
-![Customer Satisfaction](screenshots/customer%20satisfaction%20.jpeg)
+![Customer Satisfaction](Screenshots/customer%20satisfaction%20.jpeg)
 
 ---
 
 ### Q6: Delivery Performance
 Average delivery days by state — and how proximity between seller and buyer impacts speed.
 
-![Delivery Performance](screenshots/delivery%20performance.jpeg)
+![Delivery Performance](Screenshots/delivery%20performance.jpeg)
 
 **Same-state deliveries are consistently faster.** When seller and customer are in the same state, average delivery drops to 6–11 days. SP→SP alone accounts for 35,420 orders at 7.9 days average.
 
-![Delivery by State Pair](screenshots/relation%20between%20same%20state%20and%20delivery%20days.jpeg)
+![Delivery by State Pair](Screenshots/relation%20between%20same%20state%20and%20delivery%20days.jpeg)
 
 ---
 
