@@ -4,7 +4,8 @@
 ![Python](https://img.shields.io/badge/Python-3.x-green)
 
 ## Overview
-End to end data analysis of the Olist Brazilian E-Commerce dataset: 100k orders placed between 2016 and 2018. The project covers data ingestion, exploration, quality checks, cleaning, and business intelligence queries using SQL (SQLite) and Python.
+End to end data analysis of the Olist Brazilian E-Commerce dataset: 100k orders placed between 2016 and 2018. The project covers data ingestion, exploration, quality checks, cleaning, star schema modeling with dbt, and business intelligence queries using SQL (SQLite), Python, and dbt.
+
 ---
 
 ## Dataset
@@ -148,7 +149,12 @@ erDiagram
 
 ```
 olist-ecommerce-sql-analysis/
-├── data/                  # Raw CSVs (not tracked - see .gitignore)
+├── data/                  # Raw CSVs (not tracked — see .gitignore)
+├── olist_analytics/       # dbt project (star schema)
+│   ├── models/
+│   │   ├── staging/       # stg_customers, stg_orders, stg_products, stg_sellers
+│   │   └── marts/         # fct_orders, fct_revenue, dim_customers, dim_products, dim_sellers, dim_dates
+│   └── dbt_project.yml
 ├── queries/
 │   └── ETL.sql            # Full pipeline: exploration, cleaning, analysis
 ├── schema/
@@ -178,6 +184,13 @@ python setup_db.py
 - Install the [SQLite extension](https://marketplace.visualstudio.com/items?itemName=alexcvzz.vscode-sqlite)
 - `Ctrl+Shift+P` → SQLite: Open Database → select `olist.db`
 - Run each query block individually
+
+**5. Run the star schema with dbt**
+```bash
+pip install dbt-sqlite
+cd olist_analytics
+dbt run
+```
 
 ---
 
