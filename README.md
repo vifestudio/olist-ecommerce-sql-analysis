@@ -12,15 +12,15 @@ Source: [Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/da
 
 9 tables / 7 entities:
 
-|    Table     |   Rows   |
-|---|----------|----------|
-| customers    | 99,441   |
-| orders       | 99,441   |
-| order_items  | 112,650  |
-| payments     | 103,886  |
-| reviews      | 99,224   |
-| products     | 32,951   |
-| sellers      | 3,095    |
+| Table | Rows |
+|---|---|
+| customers | 99,441 |
+| orders | 99,441 |
+| order_items | 112,650 |
+| payments | 103,886 |
+| reviews | 99,224 |
+| products | 32,951 |
+| sellers | 3,095 |
 
 ![Row Counts](Screenshots/row_count.png)
 
