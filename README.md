@@ -26,7 +26,51 @@ Source: [Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/da
 
 ---
 
-## Schema
+## Data Model (Star Schema)
+
+Built with dbt on top of the raw dataset.
+
+```mermaid
+erDiagram
+    fct_orders {
+        string order_id
+        string customer_id FK
+        string product_id FK
+        string seller_id FK
+        string date_id FK
+        float  price
+        float  freight_value
+        float  total_amount
+        int    delivery_days
+    }
+    dim_customers {
+        string customer_id PK
+        string customer_state
+    }
+    dim_products {
+        string product_id PK
+        string product_category_name
+    }
+    dim_sellers {
+        string seller_id PK
+        string seller_state
+    }
+    dim_dates {
+        string date_id PK
+        string year
+        string month_name
+        string quarter
+    }
+
+    fct_orders }o--|| dim_customers : "customer_id"
+    fct_orders }o--|| dim_products  : "product_id"
+    fct_orders }o--|| dim_sellers   : "seller_id"
+    fct_orders }o--|| dim_dates     : "date_id"
+```
+
+---
+
+## Schema (Raw Dataset)
 
 ```mermaid
 erDiagram
