@@ -1,4 +1,4 @@
-# Olist Brazilian E-Commerce — SQL Analysis
+# Olist Brazilian E-Commerce - SQL Analysis
 
 ![SQL](https://img.shields.io/badge/SQL-SQLite-blue)
 ![Python](https://img.shields.io/badge/Python-3.x-green)
@@ -8,16 +8,16 @@ End to end data analysis of the Olist Brazilian E-Commerce dataset: 100k orders 
 ---
 
 ## Dataset
-Source: [Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) — Kaggle
+Source: [Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) - Kaggle
 
 9 tables / 7 entities:
 
-| Table        | Rows |
-|---|----------|
+|    Table     |   Rows   |
+|---|----------|----------|
 | customers    | 99,441   |
 | orders       | 99,441   |
 | order_items  | 112,650  |
-| payments     | 103,886 |
+| payments     | 103,886  |
 | reviews      | 99,224   |
 | products     | 32,951   |
 | sellers      | 3,095    |
@@ -104,7 +104,7 @@ erDiagram
 
 ```
 olist-ecommerce-sql-analysis/
-├── data/                  # Raw CSVs (not tracked — see .gitignore)
+├── data/                  # Raw CSVs (not tracked - see .gitignore)
 ├── queries/
 │   └── ETL.sql            # Full pipeline: exploration, cleaning, analysis
 ├── schema/
@@ -137,7 +137,7 @@ python setup_db.py
 
 ---
 
-## Section 1 — Exploration & Quality Check
+## Section 1 | Exploration & Quality Check
 
 ### Schema Inspection
 
@@ -158,22 +158,22 @@ PRAGMA queries confirm column names, data types, and structure across all 7 tabl
 | orders        | 2,965 null delivery dates             | Filter `WHERE order_status = 'delivered'`   |
 | orders        | 8 rows status='delivered' but no date | Exclude with `IS NOT NULL`                  |
 | products      | 610 null categories                   | Replace with `'uncategorized'` via COALESCE |
-| reviews       | 87,656 null comment titles            | Optional field — ignored in analysis        |
+| reviews       | 87,656 null comment titles            | Optional field - ignored in analysis        |
 | customer_city | Typos and inconsistent formats        | Not used  `customer_state` used instead    |
 | seller_city   | 22 rows with non-standard formats     | Not used in analysis                        |
 
 ---
 
-## Section 2 — Data Cleaning
+## Section 2 - Data Cleaning
 
 Two views created to address quality issues:
 
-- **`products_clean`** — replaces NULL category with `'uncategorized'`
-- **`sellers_clean`** (CTE) — assigns readable alias `Seller N` since seller names are anonymized UUIDs
+- **`products_clean`** - replaces NULL category with `'uncategorized'`
+- **`sellers_clean`** (CTE) - assigns readable alias `Seller N` since seller names are anonymized UUIDs
 
 ---
 
-## Section 3 — Analysis Queries
+## Section 3 - Analysis Queries
 
 ### Q1: Monthly Revenue Trend
 How has revenue evolved month over month?
@@ -211,7 +211,7 @@ Which categories have the best and worst ratings?
 ---
 
 ### Q6: Delivery Performance
-Average delivery days by state — and how proximity between seller and buyer impacts speed.
+Average delivery days by state and how proximity between seller and buyer impacts speed.
 
 ![Delivery Performance](Screenshots/delivery%20performance.jpeg)
 
@@ -222,9 +222,9 @@ Average delivery days by state — and how proximity between seller and buyer im
 ---
 
 ## Tools
-- **SQLite** — database engine
-- **Python + pandas** — CSV ingestion
-- **VS Code** — SQL editor (SQLite extension)
-- **Power BI** — dashboard 
+- **SQLite** | database engine
+- **Python + pandas** | CSV ingestion
+- **VS Code** | SQL editor (SQLite extension)
+- **Power BI** | dashboard 
 
 
